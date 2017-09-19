@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @invoice.fecha %>
+</p>
+
+<p>
+  <strong>Modo pago:</strong>
+  <%= @invoice.modo_pago %>
+</p>
+
+<p>
+  <strong>Estado:</strong>
+  <%= @invoice.estado %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>
