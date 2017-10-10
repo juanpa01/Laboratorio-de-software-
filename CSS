@@ -1,0 +1,69 @@
+
+.barra_navegacion{
+	background-color: white;
+	padding: 8px;
+    width: 100%;
+    text-align: right;
+}
+
+.barra_navegacion li{
+    text-transform: uppercase;
+    display: inline-block;
+    padding-right: 14px;
+    padding-left: 14px;
+}
+
+.barra_navegacion a{
+    color: rgba(28,28,28,0.6);
+}
+
+.barra_navegacion a:hover{
+    color: black;
+}
+
+a#lebel_bienvenida {
+    padding-right: 570px;
+    font-style: bold;
+    color: black;
+}
+a#ingresar{
+    color: rgba(254,254,254,0.7);
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(28,28,28);
+}
+
+a#ingresar:hover{
+    color: white;
+}
+
+.lista_informacion li{
+    display: inline-block;
+    text-align: center; 
+    width: 33%;
+    padding: 18px;
+}
+
+.lista_informacion h3{
+    color: rgb(28,28,28);
+    font-size: 18px;
+    text-transform: uppercase;
+    font-style: bold;
+}
+
+.main{
+    margin-top: 10px;
+    margin-bottom: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(241,241,241);
+}
+
+.carousel{
+    margin-top: 10px;
+}
+
+body{
+    background-color: rgb(225,225,225);
+}
