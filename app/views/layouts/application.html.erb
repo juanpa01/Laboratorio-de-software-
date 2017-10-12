@@ -6,6 +6,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "carousel" %>
     <meta charset="utf-8">
    	<link rel='stylesheet' type='text/css' href='stylesheet.css'/>
    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
@@ -14,6 +15,7 @@
    	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
    	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
    	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+
   </head>
 
   <body>
@@ -24,3 +26,14 @@
     <%= yield %>
   </body>
 </html>
+<!--script para el carrusel -->
+<script>
+  $('.carousel.carousel-slider').carousel({
+    fullWidth: true
+});
+autoplay()
+function autoplay() {
+    $('.carousel.carousel-slider').carousel('next');
+    setTimeout(autoplay, 4500);
+}
+</script>
