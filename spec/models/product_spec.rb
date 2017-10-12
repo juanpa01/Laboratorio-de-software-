@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Product, type: :model do
-	
+
 	#------------------ Pruebas para productos --------------------#
 	before(:all) do
 		@product = Product.new(nombre: "Jabón", descripcion: "Jabón para la ropa", marca: "REY", categoria: "Aseo", cantidad: 10, precio: 10000)

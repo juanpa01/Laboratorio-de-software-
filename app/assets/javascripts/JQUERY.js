@@ -1,7 +1,7 @@
 $('.carousel.carousel-slider').carousel({
-    fullWidth: true    
+    fullWidth: true
 });
-autoplay()   
+autoplay()
 function autoplay() {
     $('.carousel.carousel-slider').carousel('next');
     setTimeout(autoplay, 4500);
