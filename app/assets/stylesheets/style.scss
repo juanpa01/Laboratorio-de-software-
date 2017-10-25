@@ -1,9 +1,8 @@
-
 .barra_navegacion{
 	background-color: white;
 	padding: 8px;
     width: 100%;
-    text-align: right;
+    border: 1.5px solid rgb(230,230,230);
 }
 
 .barra_navegacion li{
@@ -17,21 +16,21 @@
     color: rgba(28,28,28,0.6);
 }
 
+
 .barra_navegacion a:hover{
     color: black;
 }
 
 a#lebel_bienvenida {
-    padding-right: 300px;
-    font-style: bold;
-    color: black;
+    margin-right: 400px;
+    color: rgb(15,133,143);
+
 }
 a#ingresar{
     color: rgba(254,254,254,0.7);
-    border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
-    background-color: rgb(28,28,28);
+    background-color: rgb(15,133,143);
 }
 
 a#ingresar:hover{
@@ -54,7 +53,7 @@ a#ingresar:hover{
 
 .main{
     margin-top: 10px;
-    margin-bottom: 200px;
+    margin-bottom: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: rgb(241,241,241);
@@ -66,4 +65,102 @@ a#ingresar:hover{
 
 body{
     background-color: rgb(225,225,225);
+}
+
+.categorias {
+    width: 100%;
+    height: 400px;
+    /*background-color: rgb(15,133,143);*/
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 40px;
+}
+
+.zona_categorias li {
+    background-color: white;
+    text-align: center;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    box-shadow: 10px 10px 5px #888888;
+}
+
+.zona_categorias a {
+    color: black;
+    text-transform: uppercase;
+}
+
+.zona_categorias li:hover{
+    background-color: rgb(205,205,205);
+    color: white;
+    border: 2px ridge rgb(235,235,235);
+}
+
+footer {
+    margin-top: -140px;
+    background-color: rgb(15,133,143);
+    text-align: center;
+    height: 230px;
+}
+
+footer p{
+    padding-top: 100px;
+    text-align: center;
+    text-transform: lowercase;
+    color: white;
+}
+
+footer li {
+    display: inline-block;
+}
+
+.fa {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 20px;
+    margin: 20px;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+
+
+
+#lista_mascotas {
+    background: url("mascotas.jpg") no-repeat;
+    background-size: cover;
+}
+
+#lista_electrodomesticos{
+    background: url("deportes.jpg") no-repeat;
+    background-size: cover;
+}
+
+#lista_salud {
+    background: url("electrodomesticos.jpg") no-repeat;
+    background-size: cover;
+}
+
+#lista_deportes {
+    background: url("salud.jpg") no-repeat;
+    background-size: cover;
 }

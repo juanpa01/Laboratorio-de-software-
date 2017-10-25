@@ -1,6 +1,9 @@
 <div class="barra_navegacion">
   <ul>
     <li><a id ="lebel_bienvenida" href="#"> bienvenido </a></li>
+    <% if user_signed_in? %>
+      <%= link_to "AGREGAR PRODUCTO", new_product_path %>
+    <% end %>
     <li><a href="#">OFERTAS DEL DÍA</a></li>
     <li><a href="#">MI LISTA DE DESEOS</a></li>
     <li><a href="#">ÓRDENES</a></li>
@@ -12,9 +15,6 @@
     <% else %>
     <li class="nav-item active">
       <%= link_to "Iniciar sesion", new_user_session_path,id:"ingresar" %>
-    </li>
-    <li class="nav-item active">
-      <%= link_to "Crear cuenta", new_user_registration_path%>
     </li>
     <% end %>
 
