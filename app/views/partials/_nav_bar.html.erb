@@ -1,8 +1,8 @@
 <div class="barra_navegacion">
   <ul>
-    <li><a id ="lebel_bienvenida" href="#"> bienvenido </a></li>
+    <li><%= link_to "Bienvenido", root_path, id:"lebel_bienvenida" %></li>
     <% if user_signed_in? %>
-      <%= link_to "PRODUCTOS", products_path %>
+      <%= link_to "PRODUCTOS", products_path  %>
     <% end %>
     <li><a href="#">OFERTAS DEL DÍA</a></li>
     <li><a href="#">MI LISTA DE DESEOS</a></li>
