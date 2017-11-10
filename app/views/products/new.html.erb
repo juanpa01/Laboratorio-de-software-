@@ -1,4 +1,12 @@
+ <div class="card-panel grey lighten-5">
+    <div class="container">
+      <div class="row">
+        <h1>Nuevo Producto</h1>
+        <%= render 'form', product: @product %>
 
-<%= render 'form', product: @product %>
-
-<%= link_to 'Regresar', products_path %>
+         <div class="actions col s10">
+           <%= link_to 'Regresar', products_path, class: "black-text text-darken-2" %>
+        </div>
+     </div>
+  </div>
+</div>
