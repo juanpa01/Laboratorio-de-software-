@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'search/create'
+
   resources :orders
   devise_for :users
   resources :products

@@ -37,3 +37,8 @@
 
   <%= link_to 'Nuevo Producto', new_product_path, class:"waves-effect waves-light btn" %>
 </div>
+
+<%= form_tag "/search/create", method: :get, remote: true, id: "search-form" do %>
+  <%= date_field_tag :keyword, nil, placeholder: "Buscar" %>
+  <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+<% end %>
