@@ -39,6 +39,9 @@
 </div>
 
 <%= form_tag "/search/create", method: :get, remote: true, id: "search-form" do %>
-  <%= date_field_tag :keyword, nil, placeholder: "Buscar" %>
+  <%= label :date_start, "Fecha de inicio"%>
+  <%= date_field_tag :date_start, nil %>
+  <%= label :date_end, "Fecha final"%>
+  <%= date_field_tag :date_end, nil %>
   <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
 <% end %>
