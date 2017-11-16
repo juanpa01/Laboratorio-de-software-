@@ -2,7 +2,8 @@
   <ul>
     <li><%= link_to "Bienvenido", root_path, id:"lebel_bienvenida" %></li>
     <% if user_signed_in? %>
-      <%= link_to "PRODUCTOS", products_path  %>
+      <li> <%= link_to "PRODUCTOS", products_path  %></li>
+      <li> <%= link_to "INFORMES", "/search/report"  %></li>
     <% end %>
     <li><a href="#">OFERTAS DEL DÍA</a></li>
     <li><a href="#">MI LISTA DE DESEOS</a></li>
@@ -18,7 +19,4 @@
     </li>
     <% end %>
   </ul>
-</div>
-<div id="resultados">
-
 </div>

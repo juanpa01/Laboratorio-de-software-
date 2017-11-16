@@ -7,10 +7,10 @@ class SearchController < ApplicationController
     @products = Product.where("created_at BETWEEN ? AND ?",date_start, date_end)
     #@products = Product.where(:created_at => date_start..date_end)
     respond_to do |format|
-      format.html {redirect_to root_path}
-      format.json { render json: @products }
       format.js
     end
+  end
+  def report
 
   end
 end
