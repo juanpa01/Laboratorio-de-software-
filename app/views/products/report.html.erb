@@ -1,9 +1,24 @@
 <div class="card-panel grey lighten-5">
+<div class="container-fluid"><br>
+  <h3>Informe de productos</h3>
+  <div class="row">
+    <div class="col s6">
+      <%= form_tag "/products/report", method: :get do %>
+        <%= label :date_start, "Fecha de inicio"%>
+        <%= date_field_tag :date_start, nil %>
+        <%= label :date_end, "Fecha final"%>
+        <%= date_field_tag :date_end, nil %>
+        <%= submit_tag "Buscar", name: nil, class: "btn btn-primary btn-md" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+
+
   <p id="notice"><%= notice %></p>
 
   <h1>Productos</h1>
-
-  <%= link_to "Informe", "/products/report", class:"posicion btn btn-outline-success"%>
     <table class="responsive-table striped centered">
       <thead>
         <tr>
@@ -26,16 +41,12 @@
             <td><%= product.categoria %></td>
             <td><%= product.cantidad %></td>
             <td><%= product.precio %></td>
-            <td><%= link_to 'Editar', edit_product_path(product), class:"teal-text text-darken-2" %></td>
-            <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, class:"red-text text-darken-2" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+  </div>
 
 
-
-    <br>
-
-  <%= link_to 'Nuevo Producto', new_product_path, class:"waves-effect waves-light btn" %>
+  <br>
 </div>

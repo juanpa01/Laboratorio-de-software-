@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'products/report'
   get 'search/create'
   get 'search/report'
   resources :orders

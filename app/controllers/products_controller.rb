@@ -1,6 +1,16 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def report
+    @products = Product.all
+    date_start = "#{params[:date_start]}"
+    date_end = "#{params[:date_end]}"
+
+    #@products = Product.where("nombre LIKE ? OR descripcion LIKE ? OR marca LIKE ? OR categoria LIKE ?", palabra, palabra, palabra, palabra)
+    if date_start and date_end
+      @products = Product.where("created_at BETWEEN ? AND ?",date_start, date_end)
+    end
+  end
   # GET /products
   # GET /products.json
   def index
