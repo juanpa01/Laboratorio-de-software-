@@ -11,9 +11,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
    def create
      super do |resource|
         if resource.save
-           UsermMailer.notify(resource).deliver_later
+           #UsermMailer.notify(resource).deliver_later
+           UsermMailer.notify(resource).deliver unless resource.invalid?
         end
-      #UserMailer.welcome(resource).deliver unless resource.invalid?
      end
    end
 

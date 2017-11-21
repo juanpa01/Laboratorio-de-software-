@@ -1,6 +1,6 @@
 <div class="barra_navegacion">
   <ul>
-    <li><%= link_to "Bienvenido", root_path, id:"lebel_bienvenida" %></li>
+    <li> <%= link_to (image_tag("logo.png")), root_path, id:"lebel_bienvenida"  %></li>
     <% if user_signed_in? %>
       <li> <%= link_to "PRODUCTOS", products_path  %></li>
     <% end %>
