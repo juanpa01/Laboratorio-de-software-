@@ -1,23 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+    <!-- GOOGLE FONTS tipo de letra -->
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
 
   </head>
   <body>
     <div class="container">
-      <%= wicked_pdf_image_tag 'logo.png'%><br><br>
+      <div class="row">
+        <div class="col">
+          <%= wicked_pdf_image_tag 'logo.png'%><br><br>
+      </div>
+      <div class="col-8">
+        <h3 class="letra_titulo">Tienda online</h3>
+      </div>
     </div>
     <div class="container">
-      <h5>El siguiente informe presenta los producto agregados a la tienda desde <%= @date_start %> hasta <%= @date_end%></h5>
-      <h1>Productos</h1><br>
-        <table class="table table-striped ">
+      <h5 class="letra_cuerpo">El siguiente informe presenta los producto agregados a la tienda desde <%= @date_start %> hasta <%= @date_end%></h5>
+      <h3 class="letra_cuerpo">Productos</h3><br>
+        <table class="table table-striped letra_cuerpo">
           <thead>
             <tr>
               <th>#</th>
@@ -32,7 +42,7 @@
           <tbody>
             <% @products.each_with_index do |product, index| %>
               <tr>
-                <td><%= index %></td>
+                <td><%= index + 1 %></td>
                 <td><%= product.nombre %></td>
                 <td><%= product.marca %></td>
                 <td><%= product.created_at.strftime("%Y-%m-%d")%></td>
