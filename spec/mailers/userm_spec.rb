@@ -1,8 +1,8 @@
 require "rails_helper"
 
-RSpec.describe WelcomeMailer, type: :mailer do
+RSpec.describe UsermMailer, type: :mailer do
   describe "notify" do
-    let(:mail) { WelcomeMailer.notify }
+    let(:mail) { UsermMailer.notify }
 
     it "renders the headers" do
       expect(mail.subject).to eq("Notify")
