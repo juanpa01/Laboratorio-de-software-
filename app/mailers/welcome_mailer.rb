@@ -5,9 +5,9 @@ class WelcomeMailer < ApplicationMailer
   #
   #   en.welcome_mailer.notify.subject
   #
-  def notify
-    @greeting = "Hi"
+  def notify(user)
+    @user = user
 
-    mail to: "to@example.org"
+    mail to: user.email, subject: "Bienvenido!"
   end
 end
