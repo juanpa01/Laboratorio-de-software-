@@ -5,25 +5,46 @@
   xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
   xmlns:html="http://www.w3.org/TR/REC-html40">
   <Worksheet ss:Name="Sheet1">
-    <Table>
-      <Row>
-        <Cell><Data ss:Type="String">Nombre</Data></Cell>
-        <Cell><Data ss:Type="String">Descripcion</Data></Cell>
-        <Cell><Data ss:Type="String">Marca</Data></Cell>
-        <Cell><Data ss:Type="String">Categoria</Data></Cell>
-        <Cell><Data ss:Type="String">Cantidad</Data></Cell>
-        <Cell><Data ss:Type="String">Precio</Data></Cell>
-      </Row>
-    <% @products.each do |product| %>
-      <Row>
-        <Cell><Data ss:Type="String"><%= product.nombre %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= product.descripcion %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= product.marca %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= product.categoria %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= product.cantidad %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= product.precio %></Data></Cell>
-      </Row>
+    <% if current_user.try(:admin?) %>
+      <Table>
+        <Row>
+          <Cell><Data ss:Type="String">Nombre</Data></Cell>
+          <Cell><Data ss:Type="String">Descripcion</Data></Cell>
+          <Cell><Data ss:Type="String">Marca</Data></Cell>
+          <Cell><Data ss:Type="String">Categoria</Data></Cell>
+          <Cell><Data ss:Type="String">Fecha creacion</Data></Cell>
+          <Cell><Data ss:Type="String">Cantidad</Data></Cell>
+          <Cell><Data ss:Type="String">Precio</Data></Cell>
+        </Row>
+        <% @products.each do |product| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= product.nombre %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= product.descripcion %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= product.marca %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= product.categoria %></Data></Cell>
+            <Cell><Data ss:Type="String"><%= product.created_at.strftime("%Y-%m-%d") %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= product.cantidad %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= product.precio %></Data></Cell>
+          </Row>
+        <% end %>
+      </Table>
+    <% else %>
+      <Table>
+        <Row>
+          <Cell><Data ss:Type="String">Nombre</Data></Cell>
+          <Cell><Data ss:Type="String">Cantidad</Data></Cell>
+          <Cell><Data ss:Type="String">Precio</Data></Cell>
+        </Row>
+        <% @products.each do |product| %>
+          <Row>
+            <Cell><Data ss:Type="String"><%= product.nombre %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= product.cantidad %></Data></Cell>
+            <Cell><Data ss:Type="Number"><%= product.precio %></Data></Cell>
+          </Row>
+        <% end %>
+      </Table>
     <% end %>
-    </Table>
+
+
   </Worksheet>
 </Workbook>
