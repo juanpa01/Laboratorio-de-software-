@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+
   def report
 
     @date_start = "#{params[:date_start]}"
@@ -17,6 +18,8 @@ class ProductsController < ApplicationController
       format.html
       format.json
       format.pdf {render template: 'products/informe', pdf: "Informe"  }
+      format.csv {render text: @product.to_csv }
+      format.xls #{send_data @products.to_csv(col_sep: "\t")}
     end
   end
 
