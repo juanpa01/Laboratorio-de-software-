@@ -4,38 +4,61 @@
   <h1>Productos</h1>
 
   <%= link_to "Informe", "/products/report", class:"posicion btn btn-outline-success"%>
+  <% if current_user.try(:admin?) %>
+  <table class="responsive-table striped centered">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Marca</th>
+        <th>Categoria</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.nombre %></td>
+          <td><%= product.descripcion %></td>
+          <td><%= product.marca %></td>
+          <td><%= product.categoria %></td>
+          <td><%= product.cantidad %></td>
+          <td><%= product.precio %></td>
+          <td><%= link_to 'Editar', edit_product_path(product), class:"teal-text text-darken-2" %></td>
+          <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, class:"red-text text-darken-2" %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <% else %>
     <table class="responsive-table striped centered">
       <thead>
         <tr>
+          <th>#</th>
           <th>Nombre</th>
-          <th>Descripcion</th>
-          <th>Marca</th>
-          <th>Categoria</th>
           <th>Cantidad</th>
           <th>Precio</th>
-          <th colspan="2"></th>
         </tr>
       </thead>
 
       <tbody>
-        <% @products.each do |product| %>
+        <% @products.each_with_index do |product, index| %>
           <tr>
+            <td><%= index + 1 %></td>
             <td><%= product.nombre %></td>
-            <td><%= product.descripcion %></td>
-            <td><%= product.marca %></td>
-            <td><%= product.categoria %></td>
             <td><%= product.cantidad %></td>
             <td><%= product.precio %></td>
-            <td><%= link_to 'Editar', edit_product_path(product), class:"teal-text text-darken-2" %></td>
-            <td><%= link_to 'Eliminar', product, method: :delete, data: { confirm: 'Are you sure?' }, class:"red-text text-darken-2" %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
+  <% end %>
 
-
-
-    <br>
-
-  <%= link_to 'Nuevo Producto', new_product_path, class:"waves-effect waves-light btn" %>
+  <br>
+  <% if current_user.try(:admin?) %>
+      <%= link_to 'Nuevo Producto', new_product_path, class:"waves-effect waves-light btn" %>
+  <% end %>
 </div>
