@@ -27,6 +27,7 @@
     <div class="container">
       <h5 class="letra_cuerpo">El siguiente informe presenta los producto agregados a la tienda desde <%= @date_start %> hasta <%= @date_end%></h5>
       <h3 class="letra_cuerpo">Productos</h3><br>
+      <% if current_user.try(:admin?) %>
         <table class="table table-striped letra_cuerpo">
           <thead>
             <tr>
@@ -52,6 +53,29 @@
             <% end %>
           </tbody>
         </table>
+      <% else %>
+        <table class="table table-striped letra_cuerpo">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @products.each_with_index do |product, index| %>
+              <tr>
+                <td><%= index + 1 %></td>
+                <td><%= product.nombre %></td>
+                <td><%= product.cantidad %></td>
+                <td><%= product.precio %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      <% end %>
     </div>
 
 

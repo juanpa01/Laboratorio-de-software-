@@ -1,7 +1,7 @@
 <div class="barra_navegacion">
   <ul>
     <li> <%= link_to (image_tag("logo.png")), root_path, id:"lebel_bienvenida"  %></li>
-    <% if user_signed_in? %>
+    <% if current_user.try(:admin?) or user_signed_in? %>
       <li> <%= link_to "PRODUCTOS", products_path  %></li>
     <% end %>
     <li><a href="#">OFERTAS DEL DÍA</a></li>
