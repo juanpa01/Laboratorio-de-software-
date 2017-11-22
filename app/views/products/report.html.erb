@@ -15,6 +15,7 @@
 </div>
 
 <%= link_to "Imprimir PDF" ,products_report_url(:format => :pdf, params: request.query_parameters), class: "btn btn-danger posicion_pdf"%>
+<%= link_to "Imprimir Excel" ,products_report_url(:format => :xls, params: request.query_parameters), class: "btn btn-danger posicion_xls"%>
 
 
 
